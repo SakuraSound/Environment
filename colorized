@@ -1,0 +1,13 @@
+#!/bin/bash
+
+
+CYAN="\[\033[0;36m\]"
+RED="\[\033[0;31m\]"
+YELLOW="\[\033[0;33m\]"
+GREEN="\[\033[0;32m\]"
+DARK_RED="\[\033[1;31m\]"
+NO_COLOR="\[\033[0m\]"
+GRAY="\[\033[1;30m\]"
+BUBBLEGUM="\[\033[1;35m\]"
+
+PS1="$DARK_RED\u$GREEN@$CYAN\h$BUBBLEGUM: $RED[\d \t] $GRAY\w$YELLOW\$(__git_ps1)$NO_COLOR\$ "

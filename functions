@@ -1,0 +1,32 @@
+#!/bin/bash
+
+#### START FUNCTIONS ####
+
+# Inventory functions
+
+function inventory-atom() {
+    # Write to file the list of atom packages
+    apm list --installed --bare | grep '^[^@]\+' -o > "$ENVIRONMENT_PATH/Atomfile"
+    echo "Logged current atom package list to $ENVIRONMENT_PATH/Atomfile"
+}
+
+function inventory-pip() {
+    # Write to file the list of pip packages
+    pip freeze > "$ENVIRONMENT_PATH/Pipfile"
+    echo "Logged current pip package list to $ENVIRONMENT_PATH/Pipfile"
+}
+
+function inventory-brew() {
+    # Write to file the list of brew packages
+    brew list -C | awk '{ print $2 }' > "$ENVIRONMENT_PATH/Brewfile"
+    echo "Logged current brew package list to $ENVIRONMENT_PATH/Brewfile"
+}
+
+function inventory-cask() {
+    # Write to file the list of cask applications
+    brew cask list -l | awk 'NF==9{ print $9 }' > "$ENVIRONMENT_PATH/Caskfile"
+    echo "Logged current cask package list to $ENVIRONMENT_PATH/Caskfile"
+}
+
+
+####  END FUNCTIONS  ####

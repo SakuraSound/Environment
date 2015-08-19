@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#### START EXPORTS ####
+
+# colored terminal
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
+
+# golang specific
+export GOPATH=/Users/SakuraSound/Developer/Golang
+export GOBIN=$GOPATH/bin
+
+# actual path variable
+export PATH=$PATH:$GOBIN
+
+if [ -z "$LAST_UPDATE" ] ; then
+    true
+else
+    LAST_UPDATE=$(date +%Y-%m-%d)
+    export $LAST_UPDATE
+fi
+
+####  END EXPORTS  ####
