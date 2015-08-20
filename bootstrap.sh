@@ -18,6 +18,7 @@ clear
 # Check to see if brew is installed
 which -s brew
 
+
 if [[ $? != 0 ]] ; then
     # We want to install homebrew
     echo "${bold}Installing Homebrew...${normal}"
@@ -76,8 +77,13 @@ if [[ $? != 0 ]] ; then
 
 
 else
+    # Source the last_updated variable from the file if it exists
+    if [[ -f "$ENVIRONMENT_PATH/.last_updated" ]] ; then
+        source "$ENVIRONMENT_PATH/.last_updated"
+    fi
+
     # If we havent run an update today, lets run one!
-    if [[ $TODAY > $LAST_UPDATE || -z "$LAST_UPDATE" ]] ; then
+    if [[ "$TODAY" != "$LAST_UPDATE" ]] ; then
         # Homebrew updates
         if $HOMEBREW_UPDATE_ON_REFRESH; then
             # Let us update homebrew
@@ -117,7 +123,7 @@ else
             apm outdated
             inventory-atom
         fi
-        export LAST_UPDATE=$TODAY
+        echo "LAST_UPDATE=\"$TODAY\"" > "$ENVIRONMENT_PATH/.last_updated"
     fi
 fi
 
