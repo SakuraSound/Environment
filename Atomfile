@@ -6,6 +6,7 @@ autocomplete-plus-python-jedi
 irc
 language-docker
 language-gherkin-i18n
+language-systemd
 linter
 linter-flake8
 linter-golinter
