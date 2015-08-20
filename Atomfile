@@ -3,7 +3,6 @@ atom-material-syntax
 atom-material-ui
 autocomplete-paths
 autocomplete-plus-python-jedi
-irc
 language-docker
 language-gherkin-i18n
 language-systemd

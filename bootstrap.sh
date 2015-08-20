@@ -98,6 +98,7 @@ else
         # PIP updates
         if $PIP_UPDATE_ON_REFRESH; then
             echo "${bold}Running pip install to pull new packages...${normal}"
+            # TODO Need to fix this
             pip install --upgrade
             inventory-pip
         else
@@ -116,7 +117,7 @@ else
             apm outdated
             inventory-atom
         fi
-        export LAST_UPDATE=TODAY
+        export LAST_UPDATE=$TODAY
     fi
 fi
 
