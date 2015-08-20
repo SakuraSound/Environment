@@ -18,6 +18,5 @@ source "$ENVIRONMENT_PATH/aliases"
 # Import colorized terminal settings
 source "$ENVIRONMENT_PATH/colorized"
 
-
 # Bring in osx specific inputrc settings
 bind -f "$ENVIRONMENT_PATH/inputrc"
