@@ -10,6 +10,8 @@ export LSCOLORS=ExFxCxDxBxegedabagacad
 export GOPATH=/Users/SakuraSound/Developer/Golang
 export GOBIN=$GOPATH/bin
 
+export FIGLET_FONTS=/usr/local/Cellar/figlet/2.2.5/share/figlet/fonts
+
 # actual path variable
 export PATH=$PATH:$GOBIN
 

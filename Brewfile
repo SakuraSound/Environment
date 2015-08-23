@@ -1,4 +1,4 @@
 emacs
+figlet
 gdbm
 git
-go

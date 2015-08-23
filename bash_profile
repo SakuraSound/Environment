@@ -20,3 +20,6 @@ source "$ENVIRONMENT_PATH/colorized"
 
 # Bring in osx specific inputrc settings
 bind -f "$ENVIRONMENT_PATH/inputrc"
+
+# Print out random banner 
+# source "$ENVIRONMENT_PATH/splash"
